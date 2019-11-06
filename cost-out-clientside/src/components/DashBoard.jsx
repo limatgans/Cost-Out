@@ -13,27 +13,18 @@ import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
-import Chart from './Chart';
-import Deposits from './Deposits';
-import Orders from './Orders';
 
-function Copyright() {
-	return (
-		<Typography variant="body2" color="textSecondary" align="center">
-			{'Copyright © '}
-			<Link color="inherit" href="https://material-ui.com/">
-				Your Website
-			</Link>{' '}
-			{new Date().getFullYear()}
-			{'.'}
-		</Typography>
-	);
-}
+// Components
+import Chart from './Chart';
+import NetBalanceCard from './NetBalanceCard';
+import NetPendingCard from './NetPendingCard';
+import Orders from './Orders';
+import Copyright from './Copyright';
+
 
 const drawerWidth = 240;
 
@@ -176,15 +167,21 @@ export default function Dashboard() {
 				<Container maxWidth="lg" className={classes.container}>
 					<Grid container spacing={3}>
 						{/* Chart */}
-						<Grid item xs={12} md={8} lg={9}>
+						<Grid item xs={12} md={4} lg={6}>
 							<Paper className={fixedHeightPaper}>
 								<Chart />
 							</Paper>
 						</Grid>
-						{/* Recent Deposits */}
+						{/* Recent NetBalanceCard */}
 						<Grid item xs={12} md={4} lg={3}>
 							<Paper className={fixedHeightPaper}>
-								<Deposits />
+								<NetBalanceCard />
+							</Paper>
+						</Grid>
+						{/* NetPendingCard */}
+						<Grid item xs={12} md={4} lg={3}>
+							<Paper className={fixedHeightPaper}>
+								<NetPendingCard />
 							</Paper>
 						</Grid>
 						{/* Recent Orders */}

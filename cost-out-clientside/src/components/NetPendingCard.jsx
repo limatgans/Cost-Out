@@ -10,16 +10,16 @@ const useStyles = makeStyles({
 	},
 });
 
-export default function Deposits() {
+export default function NetPendingCard() {
 	const classes = useStyles();
 	return (
 		<React.Fragment>
-			<Title>Recent Deposits</Title>
+			<Title>Net Pending</Title>
 			<Typography component="p" variant="h4">
-				$3,024.00
+				- ₹ 3,024.00
 			</Typography>
 			<Typography color="textSecondary" className={classes.depositContext}>
-				on 15 March, 2019
+				as on 15 March, 2019
 			</Typography>
 			<div>
 				<Link color="primary" href="javascript:;">
